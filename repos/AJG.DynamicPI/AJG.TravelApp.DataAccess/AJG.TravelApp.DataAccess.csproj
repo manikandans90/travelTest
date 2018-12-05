@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B98D6CEC-836C-4BCD-9DA1-6CE01CEDA1A9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AJG.TravelApp.DataAccess</RootNamespace>
+    <AssemblyName>AJG.TravelApp.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseDataAccess.cs" />
+    <Compile Include="DestinationDataAccess.cs" />
+    <Compile Include="EmailDataAccess.cs" />
+    <Compile Include="EmergencyContactDataAccess.cs" />
+    <Compile Include="GeneratedCertificateDataAccess.cs" />
+    <Compile Include="OfficerUserDataAccess.cs" />
+    <Compile Include="OrganisationDataAccess.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TripDataAccess.cs" />
+    <Compile Include="UserDataAccess.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AJG.TravelApp.DataAccess.EntityFramework\AJG.TravelApp.DataAccess.EntityFramework.csproj">
+      <Project>{474649cd-5f70-4622-b31a-5cdf46912d75}</Project>
+      <Name>AJG.TravelApp.DataAccess.EntityFramework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AJG.TravelApp.DataAccess.Interfaces\AJG.TravelApp.DataAccess.Interfaces.csproj">
+      <Project>{ee6c6f21-f6f4-4856-a735-0d048530ab35}</Project>
+      <Name>AJG.TravelApp.DataAccess.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AJG.TravelApp.Infrastructure\AJG.TravelApp.Infrastructure.csproj">
+      <Project>{c4d61bf5-d51d-49a6-afee-316e2549ca22}</Project>
+      <Name>AJG.TravelApp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AJG.TravelApp.Models\AJG.TravelApp.Models.csproj">
+      <Project>{39985698-0229-414d-9de2-e16cbe78c4a4}</Project>
+      <Name>AJG.TravelApp.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
